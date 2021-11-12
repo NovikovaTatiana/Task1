@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <script type="text/javascript" src="../code.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -44,17 +45,17 @@
     
     
        </form>
-    <form action="" method="GET">
+    <form name="Sel1" action="" method="GET">
         <div>
         <div>Как вам удобно получить ответ</div>
         <label for="c_mail">
-        <input type="radio" name="answer" value="a1">По почте</label>
+        <input type="radio" name="answer" value="Good" onclick="if(this.checked) CheckRadio(this.form,this.value)">По почте</label>
         <Br>
         <label for="c_mail">
-        <input type="radio" name="answer" value="a2">По телефону</label>
+        <input type="radio" name="answer" value="Good" onclick="if(this.checked) CheckRadio(this.form,this.value)">По телефону</label>
         <Br>
         <label for="c_mail">
-        <input type="radio" name="answer" value="a3">Не нужно отвечать</label>
+        <input type="radio" name="answer" value="Bad" onclick="if(this.checked) CheckRadio(this.form,this.value)">Не нужно отвечать</label>
         <br>
         </div>
         <div>
@@ -85,21 +86,22 @@
 
         <div>Ваше имя</div>
         <div>
-        <input type="text" name="name"id="name"size="30"pattern="[A-Z]"+required>
+        <input type="text" name="name"id="name" onblur="this.value.toUpperCase()" size="30"pattern="[A-Z]"+required>
         <div>
             <label for="email">Адрес почты</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" onblur="this.value.toUpperCase()">
         </div>
         <div>
             <label for="tel">Номер телефона</label>
-            <input type="tel" name="tel" id="tel">
+            <input type="tel" name="tel" id="tel" onblur="this.value.toUpperCase()">
         </div>
             <div>Ваш вопрос</div>
         <div>
-        <textarea cols="20"></textarea>
+        <textarea name="letter" cols="20"></textarea>
         </div>
-        <input type="submit" value="Отправить вопрос">
-        <input type="submit" value="Очистить">
+        <input type="button" onclick="Complete();" value="Отправить вопрос" >
+        <input type="reset" value="Очистить">
+        
     </form>
     <nav class="flex1">
         <IMG class="displayed" src="../VK_Blue_Logo_t.png" width="100">
